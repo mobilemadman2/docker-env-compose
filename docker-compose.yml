@@ -68,28 +68,28 @@ services:
         - "33055:3306"
       image: mysql:5.5
       env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      command: [mysqld, --character-set-server=utf8]
 
     mysql56:
       ports:
         - "33056:3306"
       image: mysql:5.6
       env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      command: [mysqld, --character-set-server=utf8]
 
     mysql57:
       ports:
         - "33057:3306"
       image: mysql:5.7
       env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      command: [mysqld, --character-set-server=utf8]
 
     mysql80:
       image: mysql:8.0
       ports:
         - "33080:3306"
       env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      command: [mysqld, --character-set-server=utf8]
 
     maria10:
       ports:
