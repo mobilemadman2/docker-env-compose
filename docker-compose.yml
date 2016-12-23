@@ -151,3 +151,10 @@ services:
       env_file: .env
       hostname: dksybase
 
+    mssqllinux:
+      privileged: true
+      image: datagrip/mssql-server-linux
+      ports:
+        - "1433:1433"
+      env_file: .env
+
