@@ -157,4 +157,19 @@ services:
       ports:
         - "1433:1433"
       env_file: .env
+    # IBM Informix Innovator-C
+    informix:
+      privileged: true
+      image: ibmcom/informix-innovator-c:latest
+      ports:
+        - "9088:9088"
+        - "27017:27017"
+        - "27018:27018"
+      env_file: .env
+
+    vertica72:
+      image: jbfavre/vertica:latest
+      ports:
+        - "5433:5433"
+      env_file: .env
 
