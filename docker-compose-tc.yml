@@ -1,0 +1,68 @@
+version: '2'
+
+services:    
+    pg95:
+      ports:
+        - "54325:5432"
+      image: postgres:9.5-alpine
+      env_file: .env
+
+    pg94:
+      ports:
+        - "54324:5432"
+      image: postgres:9.4-alpine
+      env_file: .env
+
+    mysql56:
+      ports:
+        - "33056:3306"
+      image: mysql:5.6
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8]
+
+    mysql55:
+      ports:
+        - "33055:3306"
+      image: mysql:5.5
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8]
+
+    mysql51:
+      ports:
+        - "33051:3306"
+      image: datagrip/mysql:5.1
+      env_file: .env
+
+    oracle11:
+      ports:
+        - "1521:1521"
+      image: datagrip/oracle:11.2
+      env_file: .env
+
+    db2:
+      privileged: true
+      image: datagrip/db2
+      ports:
+        - "50000:50000"
+      env_file: .env
+    
+    # needs about 30 seconds for proper start and initialization
+    sybase157:
+      image: datagrip/sybase:15.7
+      ports:
+        - "5000:5000"
+      env_file: .env
+      hostname: dksybase
+
+    mssqllinux:
+      privileged: true
+      image: datagrip/mssql-server-linux
+      ports:
+        - "1433:1433"
+      env_file: .env
+
+    vertica72:
+      image: jbfavre/vertica:latest
+      ports:
+        - "5433:5433"
+      env_file: .env
