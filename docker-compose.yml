@@ -105,7 +105,15 @@ services:
         - "1521:1521"
       image: datagrip/oracle:11.2
       env_file: .env
-
+    
+    # oracle 11.2.0.2 express edition (based on official docker image)
+    oracle112:
+      ports:
+        - "1522:1521"
+      image: datagrip/oracle:11.2.0.2-xe
+      shm_size: 1g
+      env_file: .env
+    
     db2:
       privileged: true
       image: datagrip/db2
