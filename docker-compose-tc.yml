@@ -24,14 +24,14 @@ services:
         - "33056:3306"
       image: mysql:5.6
       env_file: .env
-      command: [mysqld, --character-set-server=utf8]
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
 
     mysql55:
       ports:
         - "33055:3306"
       image: mysql:5.5
       env_file: .env
-      command: [mysqld, --character-set-server=utf8]
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
 
     mysql51:
       ports:
