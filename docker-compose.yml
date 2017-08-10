@@ -189,3 +189,12 @@ services:
         - "5433:5433"
       env_file: .env
 
+    # user: sys
+    # pwd: exasol
+    exasol:
+      privileged: true
+      image: exasol/docker-db:latest
+      ports:
+        - "8899:8888"
+
+
