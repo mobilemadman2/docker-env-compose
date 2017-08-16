@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 services:
     pg90:
@@ -66,9 +66,22 @@ services:
       ports:
         - "1433:1433"
       env_file: .env
+      healthcheck:
+        test: grep "Starting up database '${MSSQL_DB}'." /var/opt/mssql/log/errorlog || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
 
-    vertica72:
+    vertica72:      
       image: jbfavre/vertica:latest
       ports:
         - "5433:5433"
       env_file: .env
+
+    # user: sys
+    # pwd: exasol
+    #exasol:
+    #  privileged: true
+    #  image: exasol/docker-db:latest
+    #  ports:
+    #    - "8899:8888"
