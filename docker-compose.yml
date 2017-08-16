@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 services:
 
@@ -173,6 +173,12 @@ services:
       ports:
         - "1433:1433"
       env_file: .env
+      healthcheck:
+        test: grep "Starting up database '${MSSQL_DB}'." /var/opt/mssql/log/errorlog || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
+
     # IBM Informix Innovator-C
     informix:
       privileged: true
@@ -196,5 +202,3 @@ services:
       image: exasol/docker-db:latest
       ports:
         - "8899:8888"
-
-
