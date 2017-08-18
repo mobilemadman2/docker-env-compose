@@ -212,6 +212,8 @@ services:
     # pwd: exasol
     exasol:
       privileged: true
-      image: exasol/docker-db:latest
+      image: datagrip/exasol
       ports:
         - "8899:8888"
+        - "2580:2580"
+        - "6583:6583"
