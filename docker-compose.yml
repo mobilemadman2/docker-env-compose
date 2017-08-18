@@ -97,6 +97,13 @@ services:
       env_file: .env
       command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
 
+    mysql80X:
+      image: mysql:8
+      ports:
+        - "33081:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+
     maria10:
       ports:
         - "33040:3306"
