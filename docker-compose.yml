@@ -214,3 +214,15 @@ services:
       ports:
         - "8899:8888"
       env_file: .env
+
+    # Intersystems Caché-DB
+    # db: SAMPLES
+    # user: _SYSTEM
+    # pwd: SYS
+    # jdbc:Cache://<host>:1972/SAMPLES
+    intersystemscache:
+      image: pscherrer80/cachedb
+      ports:
+        - "57772:57772"
+        - "1972:1972"
+      env_file: .env
