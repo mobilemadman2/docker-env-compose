@@ -257,3 +257,10 @@ services:
         - "57772:57772"
         - "1972:1972"
       env_file: .env
+
+    mongo32:
+      image: tutum/mongodb:3.2
+      ports:
+        - "27117:27017"
+        - "28017:28017"
+      env_file: .env
