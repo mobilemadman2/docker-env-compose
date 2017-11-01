@@ -56,10 +56,10 @@ services:
       image: postgres:9.6-alpine
       env_file: .env
 
-    pg10beta2:
+    pg100:
       ports:
         - "54330:5432"
-      image: postgres:10-beta2-alpine
+      image: postgres:10.0-alpine
       env_file: .env
 
     mysql51:
