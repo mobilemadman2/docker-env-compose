@@ -7,10 +7,10 @@ services:
       image: postgres:9.0
       env_file: .env
 
-    pg95:
+    pg93:
       ports:
-        - "54325:5432"
-      image: postgres:9.5-alpine
+        - "54323:5432"
+      image: postgres:9.3-alpine
       env_file: .env
 
     pg94:
@@ -19,12 +19,29 @@ services:
       image: postgres:9.4-alpine
       env_file: .env
 
-    mysql56:
+    pg95:
       ports:
-        - "33056:3306"
-      image: mysql:5.6
+        - "54325:5432"
+      image: postgres:9.5-alpine
       env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+
+    pg96:
+      ports:
+        - "54326:5432"
+      image: postgres:9.6-alpine
+      env_file: .env
+
+    pg100:
+      ports:
+        - "54330:5432"
+      image: postgres:10.0-alpine
+      env_file: .env
+
+    mysql51:
+      ports:
+        - "33051:3306"
+      image: datagrip/mysql:5.1
+      env_file: .env
 
     mysql55:
       ports:
@@ -33,11 +50,26 @@ services:
       env_file: .env
       command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
 
-    mysql51:
+    mysql56:
       ports:
-        - "33051:3306"
-      image: datagrip/mysql:5.1
+        - "33056:3306"
+      image: mysql:5.6
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+
+    mysql57:
+      ports:
+        - "33057:3306"
+      image: mysql:5.7
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+
+    mysql80:
+      image: mysql:8.0.0
+      ports:
+        - "33080:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
 
     oracle11:
       ports:
