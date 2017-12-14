@@ -310,7 +310,10 @@ services:
         - "8899:8888"
       env_file: .env
       healthcheck:
-        test: "exit 0"
+        test: grep -r 'CREATE SCHEMA' /exa/logs/db/DB1/ || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
 
     # Intersystems Caché-DB
     # db: SAMPLES
