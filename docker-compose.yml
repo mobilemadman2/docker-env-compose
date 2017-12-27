@@ -142,6 +142,7 @@ services:
         - "33040:3306"
       image: mariadb:10.0
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -150,6 +151,7 @@ services:
       ports:
         - "33045:3306"
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -158,6 +160,7 @@ services:
       ports:
         - "33100:3306"
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -166,6 +169,7 @@ services:
       ports:
         - "33101:3306"
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -174,6 +178,7 @@ services:
       ports:
         - "33102:3306"
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -182,6 +187,7 @@ services:
       ports:
         - "33103:3306"
       env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
