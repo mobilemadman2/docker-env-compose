@@ -147,7 +147,7 @@ services:
         test: "exit 0"
 
     maria55:
-      image: mariadb:5.5.57
+      image: mariadb:5.5
       ports:
         - "33045:3306"
       env_file: .env
@@ -156,7 +156,7 @@ services:
         test: "exit 0"
 
     maria100:
-      image: mariadb:10.0.32
+      image: mariadb:10.0
       ports:
         - "33100:3306"
       env_file: .env
@@ -165,7 +165,7 @@ services:
         test: "exit 0"
 
     maria101:
-      image: mariadb:10.1.28
+      image: mariadb:10.1
       ports:
         - "33101:3306"
       env_file: .env
@@ -174,7 +174,7 @@ services:
         test: "exit 0"
 
     maria102:
-      image: mariadb:10.2.9
+      image: mariadb:10.2
       ports:
         - "33102:3306"
       env_file: .env
@@ -183,9 +183,36 @@ services:
         test: "exit 0"
 
     maria103:
-      image: mariadb:10.3.1
+      image: mariadb:10.3
       ports:
         - "33103:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
+    maria1027:
+      image: mariadb:10.2.7
+      ports:
+        - "33127:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
+    maria1024:
+      image: datagrip/mariadb:10.2.4
+      ports:
+        - "33124:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
+    maria1025:
+      image: mariadb:10.2.5
+      ports:
+        - "33125:3306"
       env_file: .env
       command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
