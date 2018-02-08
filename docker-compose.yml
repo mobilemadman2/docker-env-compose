@@ -304,6 +304,14 @@ services:
       healthcheck:
         test: "exit 0"
 
+    sybase160:
+      image: datagrip/sybase:16.0
+      ports:
+        - "5001:5000"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     mssqllinux:
       privileged: true
       image: datagrip/mssql-server-linux
