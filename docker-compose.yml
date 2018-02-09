@@ -244,6 +244,11 @@ services:
         - "15121:1521"
       image: datagrip/oracle:12.1.0.2-se2
       env_file: .env
+      healthcheck:
+        test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
+        interval: 5m
+        timeout: 10s
+        retries: 10
 
     db2:
       privileged: true
@@ -305,10 +310,12 @@ services:
         test: "exit 0"
 
     sybase160:
+      privileged: true
       image: datagrip/sybase:16.0
       ports:
         - "5001:5000"
       env_file: .env
+      hostname: mysybase
       healthcheck:
         test: "exit 0"
 
