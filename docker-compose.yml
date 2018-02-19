@@ -344,7 +344,7 @@ services:
         test: "exit 0"
 
     vertica72:
-      image: jbfavre/vertica:latest
+      image: jbfavre/vertica:8.1
       ports:
         - "5433:5433"
       env_file: .env
