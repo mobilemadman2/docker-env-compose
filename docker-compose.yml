@@ -349,7 +349,10 @@ services:
         - "5433:5433"
       env_file: .env
       healthcheck:
-        test: "exit 0"
+        test: grep "Create DB complete, signaling OK" /opt/vertica/log/adminTools.log || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
 
     exasol:
       privileged: true
