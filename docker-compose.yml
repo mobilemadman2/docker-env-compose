@@ -125,8 +125,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql804:
-      image: mysql:8.0.4
+    mysql803:
+      image: mysql:8.0.3
       ports:
         - "33080:3306"
       env_file: .env
