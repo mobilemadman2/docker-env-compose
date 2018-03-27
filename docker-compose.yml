@@ -143,6 +143,13 @@ services:
       healthcheck:
         test: "exit 0"
 
+    memsql:
+      image: datagrip/memsql
+      ports:
+        - "33088:3306"
+      healthcheck:
+        test: "exit 0"
+
     # for possible compatibility
     maria10:
       ports:
