@@ -147,6 +147,8 @@ services:
       image: datagrip/memsql
       ports:
         - "33088:3306"
+      environment:
+        - IGNORE_MIN_REQUIREMENTS=1
       healthcheck:
         test: "exit 0"
 
