@@ -89,6 +89,17 @@ services:
       env_file: .env
       healthcheck:
         test: "exit 0"
+
+    greenplum:
+      ports:
+        - "54302:5432"
+      image: datagrip/greenplum
+      healthcheck:
+        test: grep -r -i --include \*.log "Database successfully started" || exit 1
+        interval: 20s
+        timeout: 10s
+        retries: 5
+
     mysql51:
       ports:
         - "33051:3306"
