@@ -182,6 +182,14 @@ services:
       healthcheck:
         test: "exit 0"
 
+    maria52:
+      image: datagrip/mariadb:5.2
+      ports:
+        - "33042:3306"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     maria100:
       image: mariadb:10.0
       ports:
