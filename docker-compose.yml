@@ -187,6 +187,7 @@ services:
       ports:
         - "33042:3306"
       env_file: .env
+      command: [mysqld, --datadir=/var/lib/mysql, --user=mysql, --sql-mode=ONLY_FULL_GROUP_BY, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
@@ -195,6 +196,7 @@ services:
       ports:
         - "33043:3306"
       env_file: .env
+      command: [mysqld, --datadir=/var/lib/mysql, --user=mysql, --sql-mode=ONLY_FULL_GROUP_BY, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
         test: "exit 0"
 
