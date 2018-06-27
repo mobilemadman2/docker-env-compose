@@ -3,6 +3,7 @@ version: '2.1'
 services:
 
     pg82:
+      # jdbc:postgresql://localhost:54312/guest?user=guest&amp;password=guest
       ports:
         - "54312:5432"
       image: datagrip/postgres:8.2
@@ -11,6 +12,7 @@ services:
         test: "exit 0"
 
     pg84:
+      # jdbc:postgresql://localhost:54314/guest?user=guest&amp;password=guest
       ports:
         - "54314:5432"
       image: postgres:8.4
@@ -19,6 +21,7 @@ services:
         test: "exit 0"
 
     pg90:
+      # jdbc:postgresql://localhost:54320/guest?user=guest&amp;password=guest
       ports:
         - "54320:5432"
       image: postgres:9.0
@@ -27,6 +30,7 @@ services:
         test: "exit 0"
 
     pg91:
+      # jdbc:postgresql://localhost:54321/guest?user=guest&amp;password=guest
       ports:
         - "54321:5432"
       image: postgres:9.1
@@ -35,6 +39,7 @@ services:
         test: "exit 0"
 
     pg92:
+      # jdbc:postgresql://localhost:54322/guest?user=guest&amp;password=guest
       ports:
         - "54322:5432"
       image: postgres:9.2-alpine
@@ -43,6 +48,7 @@ services:
         test: "exit 0"
 
     pg93:
+      # jdbc:postgresql://localhost:54323/guest?user=guest&amp;password=guest
       ports:
         - "54323:5432"
       image: postgres:9.3-alpine
@@ -51,6 +57,7 @@ services:
         test: "exit 0"
 
     pg94:
+      # jdbc:postgresql://localhost:54324/guest?user=guest&amp;password=guest
       ports:
         - "54324:5432"
       image: postgres:9.4-alpine
@@ -59,6 +66,7 @@ services:
         test: "exit 0"
 
     pg95:
+      # jdbc:postgresql://localhost:54325/guest?user=guest&amp;password=guest
       ports:
         - "54325:5432"
       image: postgres:9.5-alpine
@@ -67,6 +75,7 @@ services:
         test: "exit 0"
 
     pg96:
+      # jdbc:postgresql://localhost:54326/guest?user=guest&amp;password=guest
       ports:
         - "54326:5432"
       image: postgres:9.6-alpine
@@ -75,6 +84,7 @@ services:
         test: "exit 0"
 
     pg100:
+      # jdbc:postgresql://localhost:54330/guest?user=guest&amp;password=guest
       ports:
         - "54330:5432"
       image: postgres:10.3-alpine
@@ -83,6 +93,7 @@ services:
         test: "exit 0"
 
     pg10X:
+      # jdbc:postgresql://localhost:54331/guest?user=guest&amp;password=guest
       ports:
         - "54331:5432"
       image: postgres:10-alpine
@@ -91,6 +102,7 @@ services:
         test: "exit 0"
 
     greenplum:
+      # jdbc:postgresql://localhost:54302/gpadmin?user=gpadmin&password=pivotal
       ports:
         - "54302:5432"
       image: datagrip/greenplum
@@ -101,6 +113,7 @@ services:
         retries: 5
 
     mysql51:
+      # jdbc:mysql://localhost:33051/guest?user=guest&password=guest
       ports:
         - "33051:3306"
       image: datagrip/mysql:5.1
@@ -109,6 +122,7 @@ services:
         test: "exit 0"
 
     mysql55:
+      # jdbc:mysql://localhost:33055/guest?user=guest&password=guest
       privileged: true
       ports:
         - "33055:3306"
@@ -119,6 +133,7 @@ services:
         test: "exit 0"
 
     mysql56:
+      # jdbc:mysql://localhost:33056/guest?user=guest&password=guest
       ports:
         - "33056:3306"
       image: mysql:5.6
@@ -128,6 +143,7 @@ services:
         test: "exit 0"
 
     mysql57:
+      # jdbc:mysql://localhost:33057/guest?user=guest&password=guest
       ports:
         - "33057:3306"
       image: mysql:5.7
@@ -137,6 +153,7 @@ services:
         test: "exit 0"
 
     mysql803:
+      # jdbc:mysql://localhost:33080/guest?user=guest&password=guest
       image: mysql:8.0.3
       ports:
         - "33080:3306"
@@ -146,6 +163,7 @@ services:
         test: "exit 0"
 
     mysql80X:
+      # jdbc:mysql://localhost:33081/guest?user=guest&password=guest
       image: mysql:8
       ports:
         - "33081:3306"
@@ -155,6 +173,7 @@ services:
         test: "exit 0"
 
     memsql:
+      # jdbc:mysql://localhost:33088/guest?user=guest&password=guest
       image: datagrip/memsql
       ports:
         - "33088:3306"
@@ -165,6 +184,7 @@ services:
 
     # for possible compatibility
     maria10:
+      # jdbc:mariadb://localhost:33040/guest?user=guest&password=guest
       ports:
         - "33040:3306"
       image: mariadb:10.0
@@ -174,6 +194,7 @@ services:
         test: "exit 0"
 
     maria55:
+      # jdbc:mariadb://localhost:33045/guest?user=guest&password=guest
       image: mariadb:5.5
       ports:
         - "33045:3306"
@@ -183,6 +204,7 @@ services:
         test: "exit 0"
 
     maria52:
+      # jdbc:mariadb://localhost:33042/guest?user=guest&password=guest
       image: datagrip/mariadb:5.2
       ports:
         - "33042:3306"
@@ -192,6 +214,7 @@ services:
         test: "exit 0"
 
     maria53:
+      # jdbc:mariadb://localhost:33043/guest?user=guest&password=guest
       image: datagrip/mariadb:5.3
       ports:
         - "33043:3306"
@@ -201,6 +224,7 @@ services:
         test: "exit 0"
 
     maria100:
+      # jdbc:mariadb://localhost:33100/guest?user=guest&password=guest
       image: mariadb:10.0
       ports:
         - "33100:3306"
@@ -210,6 +234,7 @@ services:
         test: "exit 0"
 
     maria101:
+      # jdbc:mariadb://localhost:33101/guest?user=guest&password=guest
       image: mariadb:10.1
       ports:
         - "33101:3306"
@@ -219,6 +244,7 @@ services:
         test: "exit 0"
 
     maria102:
+      # jdbc:mariadb://localhost:33102/guest?user=guest&password=guest
       image: mariadb:10.2
       ports:
         - "33102:3306"
@@ -228,6 +254,7 @@ services:
         test: "exit 0"
 
     maria103:
+      # jdbc:mariadb://localhost:33103/guest?user=guest&password=guest
       image: mariadb:10.3
       ports:
         - "33103:3306"
@@ -237,6 +264,7 @@ services:
         test: "exit 0"
 
     maria1027:
+      # jdbc:mariadb://localhost:33127/guest?user=guest&password=guest
       image: mariadb:10.2.7
       ports:
         - "33127:3306"
@@ -246,6 +274,7 @@ services:
         test: "exit 0"
 
     maria1024:
+      # jdbc:mariadb://localhost:33124/guest?user=guest&password=guest
       image: datagrip/mariadb:10.2.4
       ports:
         - "33124:3306"
@@ -255,6 +284,7 @@ services:
         test: "exit 0"
 
     maria1025:
+      # jdbc:mariadb://localhost:33125/guest?user=guest&password=guest
       image: mariadb:10.2.5
       ports:
         - "33125:3306"
@@ -265,8 +295,8 @@ services:
 
     # oracle VM options
     # -Duser.country=en -Duser.language=en
-    # todo: use debian:wheezy
     oracle11:
+      # jdbc:oracle:thin:guest/guest@localhost:1521:XE
       ports:
         - "1521:1521"
       image: datagrip/oracle:11.2
@@ -276,6 +306,7 @@ services:
     
     # oracle 11.2.0.2 express edition (official)
     oracle112:
+      # jdbc:oracle:thin:guest/guest@localhost:15112:XE
       ports:
         - "15112:1521"
       image: datagrip/oracle:11.2.0.2-xe
@@ -285,6 +316,7 @@ services:
     # oracle 12.1.0.2 standart edition 2 (official)
     # WARN: 12GB; start takes about 5 min
     oracle121:
+      # jdbc:oracle:thin:c##tester/testpwd@//localhost:15121/xe
       ports:
         - "15121:1521"
       image: datagrip/oracle:12.1.0.2-se2
@@ -296,6 +328,7 @@ services:
         retries: 10
 
     db2:
+      # jdbc:db2://localhost:50000/guest:user=guest;password=guest;
       privileged: true
       image: datagrip/db2
       ports:
@@ -346,6 +379,7 @@ services:
 
     # needs about 30 seconds for proper start and initialization
     sybase157:
+      # jdbc:jtds:sybase://localhost:5000/guest;user=guest;password=guest1234
       image: datagrip/sybase:15.7
       ports:
         - "5000:5000"
@@ -355,6 +389,7 @@ services:
         test: "exit 0"
 
     sybase160:
+      # jdbc:jtds:sybase://localhost:5001/guest;user=guest;password=guest1234
       privileged: true
       image: datagrip/sybase:16.0
       ports:
@@ -365,6 +400,7 @@ services:
         test: "exit 0"
 
     mssqllinux:
+      # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
       privileged: true
       image: datagrip/mssql-server-linux
       ports:
@@ -379,7 +415,7 @@ services:
     # IBM Informix Innovator-C
     informix:
       privileged: true
-      image: ibmcom/informix-innovator-c:latest
+      image: ibmcom/informix-innovator-c:12.10.FC11IE
       ports:
         - "9088:9088"
         - "27017:27017"
@@ -389,6 +425,7 @@ services:
         test: "exit 0"
 
     vertica72:
+      # jdbc:vertica://localhost:5433/docker?user=dbadmin
       image: datagrip/vertica:7.2
       ports:
         - "5433:5433"
@@ -400,6 +437,7 @@ services:
         retries: 5
 
     exasol:
+      # jdbc:exa:localhost:8899;schema=test;user=sys;password=exasol
       privileged: true
       image: datagrip/exasol:latest
       ports:
@@ -415,8 +453,8 @@ services:
     # db: SAMPLES
     # user: _SYSTEM
     # pwd: SYS
-    # jdbc:Cache://<host>:1972/SAMPLES
     intersystemscache:
+      # # jdbc:Cache://localhost:1972/SAMPLES
       image: pscherrer80/cachedb
       ports:
         - "57772:57772"
@@ -435,6 +473,7 @@ services:
         test: "exit 0"
 
     clickhouse:
+      # jdbc:clickhouse://localhost:8123/default
       image: yandex/clickhouse-server:1.1
       ports:
         - "8123:8123"
