@@ -324,7 +324,7 @@ services:
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
         interval: 5m
-        timeout: 10s
+        timeout: 30s
         retries: 10
 
     db2:
