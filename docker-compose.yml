@@ -323,7 +323,7 @@ services:
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
-        interval: 5m
+        interval: 10m
         timeout: 30s
         retries: 10
 
