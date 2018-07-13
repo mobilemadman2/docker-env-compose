@@ -1,15 +1,10 @@
 ## Files
 * docker-compose.yml - contains all services 
-* docker-compose-test.yml - contains minimum set of services for tests only
 
 ## Install Docker
 https://docs.docker.com/engine/installation/
 
 https://docs.docker.com/compose/install/ – Docker Compose
-
-Required versions:
-:exclamation: Docker 1.12
-:exclamation: Compose 1.8
 
 ## Start
 Execute `docker-compose up -d --no-recreate <service>` for setting up some particular services
