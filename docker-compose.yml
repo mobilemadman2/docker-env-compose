@@ -101,6 +101,15 @@ services:
       healthcheck:
         test: "exit 0"
 
+    pg11X:
+      # jdbc:postgresql://localhost:54332/guest?user=guest&amp;password=guest
+      ports:
+      - "54332:5432"
+      image: postgres:11-beta2-alpine
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     greenplum:
       # jdbc:postgresql://localhost:54302/gpadmin?user=gpadmin&password=pivotal
       ports:
@@ -483,3 +492,20 @@ services:
           hard: 262144
       healthcheck:
         test: "exit 0"
+
+    clickhouse2:
+      # jdbc:clickhouse://localhost:8123/default
+      image: yandex/clickhouse-server:1.1
+      ports:
+      - "8123:8123"
+      ulimits:
+        nofile:
+          soft: 262144
+          hard: 262144
+      healthcheck:
+        test: "exit 0"
+      volumes:
+      - data-volume:/var/lib/clickhouse
+
+volumes:
+  data-volume:
