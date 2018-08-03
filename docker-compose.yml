@@ -4,6 +4,7 @@ services:
 
     pg82:
       # jdbc:postgresql://localhost:54312/guest?user=guest&amp;password=guest
+      container_name: pg82
       ports:
         - "54312:5432"
       image: datagrip/postgres:8.2
@@ -13,6 +14,7 @@ services:
 
     pg84:
       # jdbc:postgresql://localhost:54314/guest?user=guest&amp;password=guest
+      container_name: pg84
       ports:
         - "54314:5432"
       image: postgres:8.4
@@ -22,6 +24,7 @@ services:
 
     pg90:
       # jdbc:postgresql://localhost:54320/guest?user=guest&amp;password=guest
+      container_name: pg90
       ports:
         - "54320:5432"
       image: postgres:9.0
@@ -31,6 +34,7 @@ services:
 
     pg91:
       # jdbc:postgresql://localhost:54321/guest?user=guest&amp;password=guest
+      container_name: pg91
       ports:
         - "54321:5432"
       image: postgres:9.1
@@ -40,6 +44,7 @@ services:
 
     pg92:
       # jdbc:postgresql://localhost:54322/guest?user=guest&amp;password=guest
+      container_name: pg92
       ports:
         - "54322:5432"
       image: postgres:9.2-alpine
@@ -49,6 +54,7 @@ services:
 
     pg93:
       # jdbc:postgresql://localhost:54323/guest?user=guest&amp;password=guest
+      container_name: pg93
       ports:
         - "54323:5432"
       image: postgres:9.3-alpine
@@ -58,6 +64,7 @@ services:
 
     pg94:
       # jdbc:postgresql://localhost:54324/guest?user=guest&amp;password=guest
+      container_name: pg94
       ports:
         - "54324:5432"
       image: postgres:9.4-alpine
@@ -67,6 +74,7 @@ services:
 
     pg95:
       # jdbc:postgresql://localhost:54325/guest?user=guest&amp;password=guest
+      container_name: pg95
       ports:
         - "54325:5432"
       image: postgres:9.5-alpine
@@ -76,6 +84,7 @@ services:
 
     pg96:
       # jdbc:postgresql://localhost:54326/guest?user=guest&amp;password=guest
+      container_name: pg96
       ports:
         - "54326:5432"
       image: postgres:9.6-alpine
@@ -85,6 +94,7 @@ services:
 
     pg100:
       # jdbc:postgresql://localhost:54330/guest?user=guest&amp;password=guest
+      container_name: pg100
       ports:
         - "54330:5432"
       image: postgres:10.3-alpine
@@ -94,6 +104,7 @@ services:
 
     pg10X:
       # jdbc:postgresql://localhost:54331/guest?user=guest&amp;password=guest
+      container_name: pg10X
       ports:
         - "54331:5432"
       image: postgres:10-alpine
@@ -103,6 +114,7 @@ services:
 
     pg11X:
       # jdbc:postgresql://localhost:54332/guest?user=guest&amp;password=guest
+      container_name: pg11X
       ports:
       - "54332:5432"
       image: postgres:11-beta2-alpine
@@ -112,6 +124,7 @@ services:
 
     greenplum:
       # jdbc:postgresql://localhost:54302/gpadmin?user=gpadmin&password=pivotal
+      container_name: greenplum
       ports:
         - "54302:5432"
       image: datagrip/greenplum
@@ -123,6 +136,7 @@ services:
 
     mysql51:
       # jdbc:mysql://localhost:33051/guest?user=guest&password=guest
+      container_name: mysql51
       ports:
         - "33051:3306"
       image: datagrip/mysql:5.1
@@ -132,6 +146,7 @@ services:
 
     mysql55:
       # jdbc:mysql://localhost:33055/guest?user=guest&password=guest
+      container_name: mysql55
       privileged: true
       ports:
         - "33055:3306"
@@ -143,6 +158,7 @@ services:
 
     mysql56:
       # jdbc:mysql://localhost:33056/guest?user=guest&password=guest
+      container_name: mysql56
       ports:
         - "33056:3306"
       image: mysql:5.6
@@ -153,6 +169,7 @@ services:
 
     mysql57:
       # jdbc:mysql://localhost:33057/guest?user=guest&password=guest
+      container_name: mysql57
       ports:
         - "33057:3306"
       image: mysql:5.7
@@ -163,6 +180,7 @@ services:
 
     mysql803:
       # jdbc:mysql://localhost:33080/guest?user=guest&password=guest
+      container_name: mysql803
       image: mysql:8.0.3
       ports:
         - "33080:3306"
@@ -173,6 +191,7 @@ services:
 
     mysql80X:
       # jdbc:mysql://localhost:33081/guest?user=guest&password=guest
+      container_name: mysql80X
       image: mysql:8
       ports:
         - "33081:3306"
@@ -183,6 +202,7 @@ services:
 
     memsql:
       # jdbc:mysql://localhost:33088/guest?user=guest&password=guest
+      container_name: memsql
       image: datagrip/memsql
       ports:
         - "33088:3306"
@@ -194,6 +214,7 @@ services:
     # for possible compatibility
     maria10:
       # jdbc:mariadb://localhost:33040/guest?user=guest&password=guest
+      container_name: maria10
       ports:
         - "33040:3306"
       image: mariadb:10.0
@@ -204,6 +225,7 @@ services:
 
     maria55:
       # jdbc:mariadb://localhost:33045/guest?user=guest&password=guest
+      container_name: maria55
       image: mariadb:5.5
       ports:
         - "33045:3306"
@@ -214,6 +236,7 @@ services:
 
     maria52:
       # jdbc:mariadb://localhost:33042/guest?user=guest&password=guest
+      container_name: maria52
       image: datagrip/mariadb:5.2
       ports:
         - "33042:3306"
@@ -224,6 +247,7 @@ services:
 
     maria53:
       # jdbc:mariadb://localhost:33043/guest?user=guest&password=guest
+      container_name: maria53
       image: datagrip/mariadb:5.3
       ports:
         - "33043:3306"
@@ -234,6 +258,7 @@ services:
 
     maria100:
       # jdbc:mariadb://localhost:33100/guest?user=guest&password=guest
+      container_name: maria100
       image: mariadb:10.0
       ports:
         - "33100:3306"
@@ -244,6 +269,7 @@ services:
 
     maria101:
       # jdbc:mariadb://localhost:33101/guest?user=guest&password=guest
+      container_name: maria101
       image: mariadb:10.1
       ports:
         - "33101:3306"
@@ -254,6 +280,7 @@ services:
 
     maria102:
       # jdbc:mariadb://localhost:33102/guest?user=guest&password=guest
+      container_name: maria102
       image: mariadb:10.2
       ports:
         - "33102:3306"
@@ -264,6 +291,7 @@ services:
 
     maria103:
       # jdbc:mariadb://localhost:33103/guest?user=guest&password=guest
+      container_name: maria103
       image: mariadb:10.3
       ports:
         - "33103:3306"
@@ -274,6 +302,7 @@ services:
 
     maria1027:
       # jdbc:mariadb://localhost:33127/guest?user=guest&password=guest
+      container_name: maria1027
       image: mariadb:10.2.7
       ports:
         - "33127:3306"
@@ -284,6 +313,7 @@ services:
 
     maria1024:
       # jdbc:mariadb://localhost:33124/guest?user=guest&password=guest
+      container_name: maria1024
       image: datagrip/mariadb:10.2.4
       ports:
         - "33124:3306"
@@ -294,6 +324,7 @@ services:
 
     maria1025:
       # jdbc:mariadb://localhost:33125/guest?user=guest&password=guest
+      container_name: maria1025
       image: mariadb:10.2.5
       ports:
         - "33125:3306"
@@ -306,6 +337,7 @@ services:
     # -Duser.country=en -Duser.language=en
     oracle11:
       # jdbc:oracle:thin:guest/guest@localhost:1521:XE
+      container_name: oracle11
       ports:
         - "1521:1521"
       image: datagrip/oracle:11.2
@@ -316,6 +348,7 @@ services:
     # oracle 11.2.0.2 express edition (official)
     oracle112:
       # jdbc:oracle:thin:guest/guest@localhost:15112:XE
+      container_name: oracle112
       ports:
         - "15112:1521"
       image: datagrip/oracle:11.2.0.2-xe
@@ -326,6 +359,7 @@ services:
     # WARN: 12GB; start takes about 5 min
     oracle121:
       # jdbc:oracle:thin:c##tester/testpwd@//localhost:15121/xe
+      container_name: oracle121
       ports:
         - "15121:1521"
       image: datagrip/oracle:12.1.0.2-se2
@@ -338,6 +372,7 @@ services:
 
     db2:
       # jdbc:db2://localhost:50000/guest:user=guest;password=guest;
+      container_name: db2
       privileged: true
       image: datagrip/db2
       ports:
@@ -347,6 +382,7 @@ services:
         test: "exit 0"
 
     hsqldb200:
+      container_name: hsqldb200
       image: datagrip/hsqldb:2.0.0
       ports:
         - "9001:9001"
@@ -355,6 +391,7 @@ services:
         test: "exit 0"
 
     hsqldb233:
+        container_name: hsqldb233
         image: datagrip/hsqldb:2.3.3
         ports:
         - "9002:9001"
@@ -363,6 +400,7 @@ services:
           test: "exit 0"
 
     derby1011:
+      container_name: derby1011
       image: datagrip/derby-server:10.11
       ports:
         - "1527:1527"
@@ -371,6 +409,7 @@ services:
         test: "exit 0"
 
     derby1012:
+      container_name: derby1012
       image: datagrip/derby-server:10.12
       ports:
         - "1528:1527"
@@ -379,6 +418,7 @@ services:
         test: "exit 0"
 
     h2:
+      container_name: h2
       image: datagrip/h2:1.3
       ports:
         - "9092:9092"
@@ -389,6 +429,7 @@ services:
     # needs about 30 seconds for proper start and initialization
     sybase157:
       # jdbc:jtds:sybase://localhost:5000/guest;user=guest;password=guest1234
+      container_name: sybase157
       image: datagrip/sybase:15.7
       ports:
         - "5000:5000"
@@ -399,6 +440,7 @@ services:
 
     sybase160:
       # jdbc:jtds:sybase://localhost:5001/guest;user=guest;password=guest1234
+      container_name: sybase160
       privileged: true
       image: datagrip/sybase:16.0
       ports:
@@ -410,6 +452,7 @@ services:
 
     mssqllinux:
       # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
+      container_name: mssqllinux
       privileged: true
       image: datagrip/mssql-server-linux
       ports:
@@ -423,6 +466,7 @@ services:
 
     # IBM Informix Innovator-C
     informix:
+      container_name: informix
       privileged: true
       image: ibmcom/informix-innovator-c:12.10.FC11IE
       ports:
@@ -435,6 +479,7 @@ services:
 
     vertica72:
       # jdbc:vertica://localhost:5433/docker?user=dbadmin
+      container_name: vertica72
       image: datagrip/vertica:7.2
       ports:
         - "5433:5433"
@@ -447,6 +492,7 @@ services:
 
     exasol:
       # jdbc:exa:localhost:8899;schema=test;user=sys;password=exasol
+      container_name: exasol
       privileged: true
       image: datagrip/exasol:latest
       ports:
@@ -464,6 +510,7 @@ services:
     # pwd: SYS
     intersystemscache:
       # # jdbc:Cache://localhost:1972/SAMPLES
+      container_name: intersystemscache
       image: pscherrer80/cachedb
       ports:
         - "57772:57772"
@@ -473,6 +520,7 @@ services:
         test: "exit 0"
 
     mongo32:
+      container_name: mongo32
       image: tutum/mongodb:3.2
       ports:
         - "27117:27017"
@@ -483,6 +531,7 @@ services:
 
     clickhouse:
       # jdbc:clickhouse://localhost:8123/default
+      container_name: clickhouse
       image: yandex/clickhouse-server:1.1
       ports:
       - "8123:8123"
