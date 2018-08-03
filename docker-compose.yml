@@ -485,14 +485,14 @@ services:
       # jdbc:clickhouse://localhost:8123/default
       image: yandex/clickhouse-server:1.1
       ports:
-        - "8123:8123"
+      - "8123:8123"
+      healthcheck:
+        test: grep -r 'Ready for connections' /var/log/clickhouse-server/clickhouse-server.log || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
       ulimits:
         nofile:
           soft: 262144
           hard: 262144
-      healthcheck:
-        test: grep -r '<Information> Application: Ready for connections' /var/log/clickhouse-server/clickhouse-server.log || exit 1
-        interval: 3m
-        timeout: 10s
-        retries: 5
 
