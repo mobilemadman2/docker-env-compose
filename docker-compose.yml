@@ -532,7 +532,7 @@ services:
     clickhouse:
       # jdbc:clickhouse://localhost:8123/default
       container_name: clickhouse
-      image: yandex/clickhouse-server:1.1
+      image: datagrip/clickhouse
       ports:
       - "8123:8123"
       healthcheck:
@@ -544,4 +544,3 @@ services:
         nofile:
           soft: 262144
           hard: 262144
-
