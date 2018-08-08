@@ -117,7 +117,7 @@ services:
       container_name: pg11X
       ports:
       - "54332:5432"
-      image: postgres:11-beta2-alpine
+      image: postgres:11-alpine
       env_file: .env
       healthcheck:
         test: "exit 0"
