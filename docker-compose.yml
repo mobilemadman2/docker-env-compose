@@ -517,7 +517,10 @@ services:
         - "1972:1972"
       env_file: .env
       healthcheck:
-        test: "exit 0"
+        test: grep -r "Starting Super Server on port" /usr/cachesys/mgr/cconsole.log
+        interval: 3m
+        timeout: 10s
+        retries: 5
 
     mongo32:
       container_name: mongo32
