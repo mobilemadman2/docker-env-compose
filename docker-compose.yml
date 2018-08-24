@@ -511,7 +511,8 @@ services:
     intersystemscache:
       # # jdbc:Cache://localhost:1972/SAMPLES
       container_name: intersystemscache
-      image: pscherrer80/cachedb
+      # image: pscherrer80/cachedb
+      image: tiagoribeiro/cache-intersystems-docker-2017
       ports:
         - "57772:57772"
         - "1972:1972"
