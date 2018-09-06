@@ -429,9 +429,8 @@ services:
     # needs about 30 seconds for proper start and initialization
     sybase157:
       # jdbc:jtds:sybase://localhost:5000/guest;user=guest;password=guest1234
-      container_name: sybase157
-      image: sybase157
-      # image: datagrip/sybase:15.7
+      container_name: sybase157      
+      image: datagrip/sybase:15.7
       ports:
         - "5000:5000"
       env_file: .env
