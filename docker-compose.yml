@@ -512,9 +512,10 @@ services:
       # # jdbc:Cache://localhost:1972/SAMPLES
       container_name: intersystemscache
       # image: pscherrer80/cachedb
-      image: tiagoribeiro/cache-intersystems-docker-2017
+      # image: tiagoribeiro/cache-intersystems-docker-2017
+      image: daimor/intersystems-cache:2017.2
       ports:
-        - "57772:57772"
+        # - "57772:57772"
         - "1972:1972"
       env_file: .env
       healthcheck:
