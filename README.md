@@ -1,10 +1,7 @@
-## Files
-* docker-compose.yml - contains all services 
-
 ## Install Docker
 https://docs.docker.com/engine/installation/
 
-https://docs.docker.com/compose/install/ – Docker Compose
+https://docs.docker.com/compose/install/
 
 ## Start
 Execute `docker-compose up -d --no-recreate <service>` for setting up some particular services
@@ -28,12 +25,6 @@ For saving a state of a service you can use the stop command:
 `docker-compose stop <service>`
 e.g.
 `docker-compose stop pg94`
-
-## Starting test environment
-:exclamation: Requires minimum 4Gb RAM and 10Gb free space on hard drive
-
-`docker-compose -f docker-compose-test.yml pull`
-`docker-compose -f docker-compose-test.yml up -d`
 
 ## Useful links
 1. https://docs.docker.com/compose/
