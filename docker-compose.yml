@@ -76,7 +76,7 @@ services:
       # jdbc:postgresql://localhost:54325/guest?user=guest&amp;password=guest
       container_name: pg95
       ports:
-        - "54325:5432"
+        - "54325:5432"        
       image: postgres:9.5-alpine
       env_file: .env
       healthcheck:
@@ -549,3 +549,17 @@ services:
         nofile:
           soft: 262144
           hard: 262144
+    
+    firebird3:
+      # jdbc:firebirdsql://localhost:3050/guest?encoding=UTF8
+      container_name: firebird3
+      image: jacobalberty/firebird:3.0
+      ports:
+        - "3050:3050"
+      environment:
+        ISC_PASSWORD: firebird25ss
+        FIREBIRD_DATABASE: guest
+        FIREBIRD_USER: guest
+        FIREBIRD_PASSWORD: guest
+      healthcheck:
+        test: "exit 0"
