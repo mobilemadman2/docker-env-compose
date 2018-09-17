@@ -563,3 +563,16 @@ services:
         FIREBIRD_PASSWORD: guest
       healthcheck:
         test: "exit 0"
+
+    firebird25sc:
+      # jdbc:firebirdsql://localhost:3052//firebird/data/guest?encoding=UTF8
+      container_name: firebird25sc
+      image: jacobalberty/firebird:2.5-sc
+      ports:
+        - "3052:3050"
+      environment:
+        FIREBIRD_DATABASE: guest
+        FIREBIRD_USER: guest
+        FIREBIRD_PASSWORD: guest
+      healthcheck:
+        test: "exit 0"
