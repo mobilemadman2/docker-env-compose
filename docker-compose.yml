@@ -581,7 +581,7 @@ services:
       # cdata driver:     jdbc:cassandra:Database=system;Port=9042;Server=localhost;
       # db schema driver: jdbc:cassandra://localhost:9042/system
       container_name: cassandra3
-      image: cassandra:3
+      image: datagrip/cassandra:3.11
       ports:
         - "9042:9042"
       healthcheck:
