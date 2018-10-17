@@ -585,10 +585,10 @@ services:
       ports:
         - "9042:9042"
       healthcheck:
-        test: "exit 0"
+        test: grep -r '\{name=guest' /var/log/cassandra/system.log || exit 1
         interval: 2m
         timeout: 5s
-        retries: 1
+        retries: 3
 
     cassandra21:
       # cdata driver:     jdbc:cassandra:Database=system;Port=9043;Server=localhost;
