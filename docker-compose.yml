@@ -611,7 +611,7 @@ services:
       ports:
         - "9044:9042"
       healthcheck:
-        test: "exit 0"
+        test: grep -r '\{name=guest' /var/log/cassandra/system.log || exit 1
         interval: 2m
         timeout: 5s
-        retries: 1
+        retries: 3
