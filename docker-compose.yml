@@ -515,7 +515,7 @@ services:
       # image: tiagoribeiro/cache-intersystems-docker-2017
       image: daimor/intersystems-cache:2017.2
       ports:
-        # - "57772:57772"
+        - "57772:57772"
         - "1972:1972"
       env_file: .env
       healthcheck:
@@ -607,7 +607,7 @@ services:
       # cdata driver:     jdbc:cassandra:Database=system;Port=9044;Server=localhost;
       # db schema driver: jdbc:cassandra://localhost:9044/system
       container_name: cassandra22
-      image: cassandra:2.2
+      image: datagrip/cassandra:2.2
       ports:
         - "9044:9042"
       healthcheck:
