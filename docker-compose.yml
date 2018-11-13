@@ -464,6 +464,20 @@ services:
         timeout: 10s
         retries: 5
 
+    mssqllinux19:
+      # jdbc:sqlserver://localhost:1434;databaseName=testdb;user=tester;password=My@Super@Secret
+      container_name: mssqllinux19
+      privileged: true
+      image: datagrip/mssql-server-linux:2019
+      ports:
+        - "1434:1433"
+      env_file: .env
+      healthcheck:
+        test: grep "Starting up database '${MSSQL_DB}'." /var/opt/mssql/log/errorlog || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
+
     # IBM Informix Innovator-C
     informix:
       container_name: informix
