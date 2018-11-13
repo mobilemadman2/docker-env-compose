@@ -454,7 +454,7 @@ services:
       # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
       container_name: mssqllinux
       privileged: true
-      image: datagrip/mssql-server-linux
+      image: datagrip/mssql-server-linux:2017-CU12
       ports:
         - "1433:1433"
       env_file: .env
