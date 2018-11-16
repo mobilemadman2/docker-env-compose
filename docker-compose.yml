@@ -592,7 +592,6 @@ services:
         test: "exit 0"
     
     cassandra3:
-      # cdata driver:     jdbc:cassandra:Database=system;Port=9042;Server=localhost;
       # db schema driver: jdbc:cassandra://localhost:9042/system
       container_name: cassandra3
       image: datagrip/cassandra:3.11
@@ -605,7 +604,6 @@ services:
         retries: 3
 
     cassandra21:
-      # cdata driver:     jdbc:cassandra:Database=system;Port=9043;Server=localhost;
       # db schema driver: jdbc:cassandra://localhost:9043/system
       container_name: cassandra21
       image: datagrip/cassandra:2.1
@@ -618,7 +616,6 @@ services:
         retries: 1
 
     cassandra22:
-      # cdata driver:     jdbc:cassandra:Database=system;Port=9044;Server=localhost;
       # db schema driver: jdbc:cassandra://localhost:9044/system
       container_name: cassandra22
       image: datagrip/cassandra:2.2
