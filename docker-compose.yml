@@ -592,7 +592,7 @@ services:
         test: "exit 0"
 
     cassandra30:
-      # db schema driver: jdbc:cassandra://localhost:9042/system
+      # db schema driver: jdbc:cassandra://localhost:9045/system
       container_name: cassandra30
       image: datagrip/cassandra:3.0
       ports:
