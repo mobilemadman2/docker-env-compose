@@ -504,6 +504,19 @@ services:
         timeout: 10s
         retries: 5
 
+    vertica80:
+      # jdbc:vertica://localhost:5480/testdb?user=tester&password=guest1234
+      container_name: vertica80
+      image: datagrip/vertica:8.0.0
+      ports:
+        - "5480:5433"
+      env_file: .env
+      healthcheck:
+        test: tail /opt/vertica/log/adminTools.log | grep "Create DB complete, signaling OK" || exit 1
+        interval: 2m
+        timeout: 10s
+        retries: 5
+
     vertica91:
       # jdbc:vertica://localhost:5491/testdb?user=tester&password=guest1234
       container_name: vertica91
