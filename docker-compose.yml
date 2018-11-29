@@ -491,21 +491,37 @@ services:
       healthcheck:
         test: "exit 0"
 
+    vertica71:
+      # jdbc:vertica://localhost:5471/testdb?user=tester&password=testpwd
+      # schema: testschema      
+      container_name: vertica71
+      image: datagrip/vertica:7.1.2
+      ports:
+        - "5471:5433"
+      env_file: .env
+      healthcheck:
+        test: tail /opt/vertica/log/adminTools-dbadmin.log | grep "Create DB complete, signaling OK" || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
+
     vertica72:
-      # jdbc:vertica://localhost:5433/docker?user=dbadmin
+      # jdbc:vertica://localhost:5433/testdb?user=tester&password=testpwd
+      # schema: testschema      
       container_name: vertica72
-      image: datagrip/vertica:7.2
+      image: datagrip/vertica:7.2.3
       ports:
         - "5433:5433"
       env_file: .env
       healthcheck:
-        test: grep "Create DB complete, signaling OK" /opt/vertica/log/adminTools.log || exit 1
+        test: tail /opt/vertica/log/adminTools.log | grep "Create DB complete, signaling OK" || exit 1
         interval: 3m
         timeout: 10s
         retries: 5
 
     vertica80:
-      # jdbc:vertica://localhost:5480/testdb?user=tester&password=guest1234
+      # jdbc:vertica://localhost:5480/testdb?user=tester&password=testpwd
+      # schema: testschema      
       container_name: vertica80
       image: datagrip/vertica:8.0.0
       ports:
@@ -518,7 +534,8 @@ services:
         retries: 5
 
     vertica81:
-      # jdbc:vertica://localhost:5481/testdb?user=tester&password=guest1234
+      # jdbc:vertica://localhost:5481/testdb?user=tester&password=testpwd
+      # schema: testschema
       container_name: vertica81
       image: datagrip/vertica:8.1.1
       ports:
@@ -531,7 +548,8 @@ services:
         retries: 5
 
     vertica91:
-      # jdbc:vertica://localhost:5491/testdb?user=tester&password=guest1234
+      # jdbc:vertica://localhost:5491/testdb?user=tester&password=testpwd
+      # schema: testschema
       container_name: vertica91
       image: datagrip/vertica:9.1.1
       ports:
