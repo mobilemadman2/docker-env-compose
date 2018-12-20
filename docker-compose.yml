@@ -134,6 +134,18 @@ services:
         timeout: 10s
         retries: 5
 
+    greenplum_5.8:
+      # jdbc:postgresql://localhost:54358/testdb?user=tester&password=pivotal
+      container_name: greenplum_5.8
+      ports:
+        - "54358:5432"      
+      image: datagrip/greenplum:5.8
+      privileged: true
+      security_opt:
+       - seccomp:unconfined
+      healthcheck:
+        test: grep -r -i --include \*.log "Database successfully started" || exit 1
+
     mysql51:
       # jdbc:mysql://localhost:33051/guest?user=guest&password=guest
       container_name: mysql51
