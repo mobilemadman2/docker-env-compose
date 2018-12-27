@@ -138,7 +138,7 @@ services:
       # jdbc:postgresql://localhost:54358/testdb?user=tester&password=pivotal
       container_name: greenplum_5.8
       ports:
-        - "54358:5432"      
+        - "54358:5432"
       image: datagrip/greenplum:5.8
       privileged: true
       security_opt:
@@ -705,5 +705,28 @@ services:
       healthcheck:
         test: grep -r '\{name=guest' /var/log/cassandra/system.log || exit 1
         interval: 2m
+        timeout: 5s
+        retries: 3
+
+    saphana:
+      # user: SYSTEM
+      # pwd: HXEHana1
+      # jdbc:sap://localhost:39017/
+      container_name: saphana
+      image: store/saplabs/hanaexpress:2.00.033.00.20180925.2
+      ports:
+        - "39017:39017"
+      ulimits:
+        nofile:
+          soft: 1048576
+          hard: 1048576
+      sysctls:
+        - kernel.shmmax=1073741824
+        - kernel.shmmni=524288 
+        - kernel.shmall=8388608
+      command: --agree-to-sap-license --passwords-url http://download.labs.intellij.net/idea/jdbc-drivers/file.json
+      healthcheck:
+        test: grep -ris --include \*.log "SAP HANA instance executed"
+        interval: 4m
         timeout: 5s
         retries: 3
