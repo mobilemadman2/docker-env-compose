@@ -312,6 +312,17 @@ services:
       healthcheck:
         test: "exit 0"
 
+    maria104:
+      # jdbc:mariadb://localhost:33104/guest?user=guest&password=guest
+      container_name: maria104
+      image: mariadb:10.4
+      ports:
+        - "33104:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
     maria1027:
       # jdbc:mariadb://localhost:33127/guest?user=guest&password=guest
       container_name: maria1027
@@ -340,6 +351,17 @@ services:
       image: mariadb:10.2.5
       ports:
         - "33125:3306"
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
+    maria1038:
+      # jdbc:mariadb://localhost:33138/guest?user=guest&password=guest
+      container_name: maria1038
+      image: mariadb:10.3.8
+      ports:
+        - "33138:3306"
       env_file: .env
       command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
       healthcheck:
