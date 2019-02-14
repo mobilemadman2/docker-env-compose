@@ -752,3 +752,48 @@ services:
         interval: 4m
         timeout: 5s
         retries: 3
+
+#docker run -e DB_USER=test -e DB_PASSWORD=test -e DB_NAME=test -e REP_USER=rtest -e REP_PASSWORD=test -e ROLE=master --name pg-master -p 5432 -d hmarr/postgresql
+#docker run -e DB_USER=test -e DB_PASSWORD=test -e DB_NAME=test -e REP_USER=rtest -e REP_PASSWORD=test -e ROLE=slave -e MASTER_HOST=$MASTER_HOST -e MASTER_PORT=5432 --name pg-slave -p 5432 -d hmarr/postgresql
+
+    pg_master:
+      container_name: pg-master
+      image: hmarr/postgresql
+      ports: 
+        - "32768:5432"
+      environment:
+        - DB_USER=test
+        - DB_PASSWORD=test
+        - DB_NAME=test
+        - REP_USER=rtest
+        - REP_PASSWORD=test
+        - ROLE=master
+      healthcheck:
+        test: "sleep 10 || true"
+        interval: 1m
+        timeout: 5s
+        retries: 3
+
+    pg_slave:
+      container_name: pg-slave
+      image: hmarr/postgresql
+      ports:
+        - "32769:5432"
+      depends_on:
+        - pg_master
+      external_links:
+        - pg_master
+      environment:
+        - DB_USER=test
+        - DB_PASSWORD=test
+        - DB_NAME=test
+        - REP_USER=rtest
+        - REP_PASSWORD=test
+        - ROLE=slave
+        - MASTER_PORT=5432
+        - MASTER_HOST=pg_master
+      healthcheck:
+        test: "sleep 5 || true"
+        interval: 1m
+        timeout: 5s
+        retries: 3
