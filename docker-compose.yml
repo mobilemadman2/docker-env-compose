@@ -147,7 +147,7 @@ services:
         test: grep -r -i --include \*.log "Database successfully started" || exit 1
 
     greenplum_5.17:
-      # jdbc:postgresql://localhost:54303/gpadmin?user=gpadmin&password=pivotal
+      # jdbc:postgresql://localhost:54303/testdb?user=tester&password=pivotal
       container_name: greenplum_5.17
       ports:
         - "54303:5432"
