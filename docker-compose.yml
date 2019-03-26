@@ -659,7 +659,7 @@ services:
       - "8123:8123"
       healthcheck:
         test: grep -r 'Ready for connections' /var/log/clickhouse-server/clickhouse-server.log || exit 1
-        interval: 1m
+        interval: 3m
         timeout: 5s
         retries: 3
       ulimits:
