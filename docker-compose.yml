@@ -500,7 +500,7 @@ services:
       # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
       container_name: mssqllinux
       privileged: true
-      image: datagrip/mssql-server-linux:2017-CU12
+      image: datagrip/mssql-server-linux:2017
       ports:
         - "1433:1433"
       env_file: .env
@@ -621,37 +621,14 @@ services:
         timeout: 10s
         retries: 5
 
-    # Intersystems Caché-DB
-    # db: SAMPLES
-    # user: _SYSTEM
-    # pwd: SYS
-#    intersystemscache:
-#      # # jdbc:Cache://localhost:1972/SAMPLES
-#      container_name: intersystemscache
-#      # image: pscherrer80/cachedb
-#      # image: tiagoribeiro/cache-intersystems-docker-2017
-#      image: daimor/intersystems-cache:2017.2
-#      ports:
-#        - "57772:57772"
-#        - "1972:1972"
-#      env_file: .env
-#      healthcheck:
-#        test: grep -r "Starting Super Server on port" /usr/cachesys/mgr/cconsole.log
-#        interval: 3m
-#        timeout: 10s
-#        retries: 5
-
     iris:
       container_name: iris
-#      image: store/intersystems/iris:2019.1.0.511.0-community
       image: datagrip/iris:2019
       ports:
         - "9092:52773"
         - "9091:51773"
       env_file: .env
       command: -p /durable/iris.txt
-#      volumes:
-#        - ./:/durable
       healthcheck:
         test: grep -r "Private webserver started on 52773" /usr/irissys/mgr/messages.log
         interval: 2m
@@ -671,7 +648,7 @@ services:
     clickhouse:
       # jdbc:clickhouse://localhost:8123/default
       container_name: clickhouse
-      image: datagrip/clickhouse
+      image: datagrip/clickhouse:18
       ports:
       - "8123:8123"
       healthcheck:
