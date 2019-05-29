@@ -427,6 +427,20 @@ services:
       healthcheck:
         test: "exit 0"
 
+    db2_11.1:
+      # jdbc:db2://localhost:50001/guest:user=guest;password=guest;
+      container_name: db2111
+      privileged: true
+      image: store/ibmcorp/db2_developer_c:11.1.4.4-x86_64
+      ports:
+        - 50001:50000
+      env_file: .db2_env
+      healthcheck:
+        test: find /database/config/.shared-data/ -name setup_complete || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
+
     hsqldb200:
       container_name: hsqldb200
       image: datagrip/hsqldb:2.0.0
