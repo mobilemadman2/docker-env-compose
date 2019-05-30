@@ -429,7 +429,7 @@ services:
 
     db2_11.1:
       # jdbc:db2://localhost:50001/guest:user=guest;password=guest;
-      container_name: db2111
+      container_name: db2_11.1
       privileged: true
       image: datagrip/db2:11.1
       ports:
