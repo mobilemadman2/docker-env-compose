@@ -433,7 +433,7 @@ services:
       privileged: true
       image: datagrip/db2:11.1
       ports:
-        - 50001:50000
+        - "50001:50000"
       env_file: .db2_env
       healthcheck:
         test: find /database/config/.shared-data/ -name setup_complete || exit 1
