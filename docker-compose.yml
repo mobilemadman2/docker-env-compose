@@ -431,7 +431,7 @@ services:
       # jdbc:db2://localhost:50001/guest:user=guest;password=guest;
       container_name: db2111
       privileged: true
-      image: store/ibmcorp/db2_developer_c:11.1.4.4-x86_64
+      image: datagrip/db2:11.1
       ports:
         - 50001:50000
       env_file: .db2_env
