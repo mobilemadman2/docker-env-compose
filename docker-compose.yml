@@ -122,6 +122,16 @@ services:
       healthcheck:
         test: "exit 0"
 
+    pg12X:
+      # jdbc:postgresql://localhost:54333/guest?user=guest&amp;password=guest
+      container_name: pg12X
+      ports:
+      - "54333:5432"
+      image: postgres:12-alpine
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     greenplum:
       # jdbc:postgresql://localhost:54302/gpadmin?user=gpadmin&password=pivotal
       container_name: greenplum
