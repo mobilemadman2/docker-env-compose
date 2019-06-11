@@ -669,6 +669,34 @@ services:
       healthcheck:
         test: "exit 0"
 
+    mongo34:
+      container_name: mongo34
+      image: datagrip/mongodb:3.4
+      ports:
+        - "27118:27017"
+        - "28018:28017"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
+    mongo40:
+      container_name: mongo40
+      image: datagrip/mongodb:4.0
+      ports:
+        - "27119:27017"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
+    mongo41:
+      container_name: mongo41
+      image: datagrip/mongodb:4.1
+      ports:
+        - "27017:27017"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     clickhouse:
       # jdbc:clickhouse://localhost:8123/default
       container_name: clickhouse
