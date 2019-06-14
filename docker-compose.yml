@@ -237,7 +237,7 @@ services:
     memsql:
       # jdbc:mysql://localhost:33088/guest?user=guest&password=guest
       container_name: memsql
-      image: datagrip/memsql
+      image: datagrip/memsql:6.7
       ports:
         - "33088:3306"
       environment:
