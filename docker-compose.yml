@@ -713,6 +713,22 @@ services:
           soft: 262144
           hard: 262144
     
+    clickhouse19:
+      # jdbc:clickhouse://localhost:8124/default
+      container_name: clickhouse19
+      image: datagrip/clickhouse:19
+      ports:
+      - "8124:8123"
+      healthcheck:
+        test: grep -r 'Ready for connections' /var/log/clickhouse-server/clickhouse-server.log || exit 1
+        interval: 3m
+        timeout: 5s
+        retries: 3
+      ulimits:
+        nofile:
+          soft: 262144
+          hard: 262144
+
     firebird3:
       # jdbc:firebirdsql://localhost:3050/guest?encoding=UTF8
       container_name: firebird3
