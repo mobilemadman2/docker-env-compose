@@ -212,6 +212,17 @@ services:
       healthcheck:
         test: "exit 0"
 
+    mysql57ssl:
+      # jdbc:mysql://localhost:33057/guest?user=guest&password=guest
+      container_name: mysql57ssl
+      ports:
+        - "33777:3306"
+      image: datagrip/mysqlssl
+      env_file: .env
+      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
+      healthcheck:
+        test: "exit 0"
+
     mysql803:
       # jdbc:mysql://localhost:33080/guest?user=guest&password=guest
       container_name: mysql803
@@ -397,13 +408,13 @@ services:
       ports:
         - "1521:1521"
       image: datagrip/oracle:11.2
+      shm_size: 1g
       env_file: .env
       healthcheck:
         test: "exit 0"
     
     # oracle 11.2.0.2 express edition (official)
     oracle112:
-      # jdbc:oracle:thin:guest/guest@localhost:15112:XE
       container_name: oracle112
       ports:
         - "15112:1521"
