@@ -437,6 +437,19 @@ services:
         timeout: 30s
         retries: 10
 
+    oracle_12.1.0:
+    # jdbc:oracle:thin:c##tester/testpwd@//localhost:15121/xe
+      container_name: oracle121d
+      ports:
+        - "15122:1521"
+      image: datagrip/oracle:12.1.0.2-se2-directio
+      env_file: .env
+      healthcheck:
+        test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
+        interval: 10m
+        timeout: 30s
+        retries: 10
+
     db2:
       # jdbc:db2://localhost:50000/guest:user=guest;password=guest;
       container_name: db2
