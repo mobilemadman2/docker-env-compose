@@ -423,13 +423,11 @@ services:
       env_file: .env
     
     # oracle 12.1.0.2 standart edition 2 (official)
-    # WARN: 12GB; start takes about 5 min
-    oracle121:
-      # jdbc:oracle:thin:c##tester/testpwd@//localhost:15121/xe
-      container_name: oracle121
+    oracle_12.1.0:
+      container_name: oracle121d
       ports:
-        - "15121:1521"
-      image: datagrip/oracle:12.1.0.2-se2
+        - "15122:1521"
+      image: datagrip/oracle:12.1.0.2-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
@@ -437,12 +435,11 @@ services:
         timeout: 30s
         retries: 10
 
-    oracle_12.1.0:
-    # jdbc:oracle:thin:c##tester/testpwd@//localhost:15121/xe
-      container_name: oracle121d
+    oracle_12.2.0:
+      container_name: oracle122d
       ports:
-        - "15122:1521"
-      image: datagrip/oracle:12.1.0.2-se2-directio
+        - "15123:1521"
+      image: datagrip/oracle:12.2.0.1-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
