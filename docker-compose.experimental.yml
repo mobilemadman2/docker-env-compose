@@ -30,6 +30,7 @@ services:
       image: datagrip/memsql:6.7
       ports:
         - "33088:3306"
+      env_file: ./experimental.env
       environment:
         - IGNORE_MIN_REQUIREMENTS=1
       healthcheck:
@@ -106,7 +107,7 @@ services:
       image: datagrip/hsqldb:2.0.0
       ports:
         - "9001:9001"
-      env_file: .env
+      env_file: ./experimental.env
       healthcheck:
         test: "exit 0"
 
@@ -115,7 +116,7 @@ services:
         image: datagrip/hsqldb:2.3.3
         ports:
         - "9002:9001"
-        env_file: .env
+        env_file: ./experimental.env
         healthcheck:
           test: "exit 0"
 

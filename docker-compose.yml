@@ -355,7 +355,9 @@ services:
       image: datagrip/db2
       ports:
         - "50000:50000"
-      env_file: .env
+      environment:
+        - DB2INST1_PASSWORD=root_pass
+        - LICENSE=accept
       healthcheck:
         test: "exit 0"
 
@@ -366,7 +368,7 @@ services:
       image: datagrip/db2:11.1
       ports:
         - "50001:50000"
-      env_file: .db2_env
+      env_file: ./db2.env
       healthcheck:
         test: find /database/config/.shared-data/ -name setup_complete || exit 1
         interval: 3m
