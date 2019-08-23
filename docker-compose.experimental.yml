@@ -1,9 +1,9 @@
 version: '2.1'
 
 services:
-    greenplum:
+    greenplum_4.3:
       # jdbc:postgresql://localhost:54302/gpadmin?user=gpadmin&password=pivotal
-      container_name: greenplum
+      container_name: greenplum_4.3
       ports:
         - "54302:5432"
       image: datagrip/greenplum
@@ -13,7 +13,7 @@ services:
         timeout: 10s
         retries: 5
 
-    mysql57ssl:
+    mysql_5.7_ssl:
       # jdbc:mysql://localhost:33057/guest?user=guest&password=guest
       container_name: mysql57ssl
       ports:
@@ -24,9 +24,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    memsql:
+    memsql_6.7:
       # jdbc:mysql://localhost:33088/guest?user=guest&password=guest
-      container_name: memsql
+      container_name: memsql_6.7
       image: datagrip/memsql:6.7
       ports:
         - "33088:3306"
@@ -36,22 +36,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    # for possible compatibility
-    maria10:
-      # jdbc:mariadb://localhost:33040/guest?user=guest&password=guest
-      container_name: maria10
-      ports:
-        - "33040:3306"
-      image: mariadb:10.0
-      env_file: .env
-      command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
-      healthcheck:
-        test: "exit 0"
-
-
-    maria1027:
+    maria_10.2.7:
       # jdbc:mariadb://localhost:33127/guest?user=guest&password=guest
-      container_name: maria1027
+      container_name: maria_10.2.7
       image: mariadb:10.2.7
       ports:
         - "33127:3306"
@@ -60,9 +47,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria1024:
+    maria_10.2.4:
       # jdbc:mariadb://localhost:33124/guest?user=guest&password=guest
-      container_name: maria1024
+      container_name: maria_10.2.4
       image: datagrip/mariadb:10.2.4
       ports:
         - "33124:3306"
@@ -71,9 +58,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria1025:
+    maria_10.2.5:
       # jdbc:mariadb://localhost:33125/guest?user=guest&password=guest
-      container_name: maria1025
+      container_name: maria_10.2.5
       image: mariadb:10.2.5
       ports:
         - "33125:3306"
@@ -82,9 +69,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria1038:
+    maria_10.3.8:
       # jdbc:mariadb://localhost:33138/guest?user=guest&password=guest
-      container_name: maria1038
+      container_name: maria_10.3.8
       image: mariadb:10.3.8
       ports:
         - "33138:3306"
@@ -94,16 +81,16 @@ services:
         test: "exit 0"
 
     # oracle 11.2.0.2 express edition (official)
-    oracle112:
-      container_name: oracle112
+    oracle_11.2_xe:
+      container_name: oracle_11.2_xe
       ports:
         - "15112:1521"
       image: datagrip/oracle:11.2.0.2-xe
       shm_size: 1g
-      env_file: .env        
+      env_file: .env
 
-    hsqldb200:
-      container_name: hsqldb200
+    hsqldb_2.0:
+      container_name: hsqldb_2.0
       image: datagrip/hsqldb:2.0.0
       ports:
         - "9001:9001"
@@ -111,8 +98,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    hsqldb233:
-        container_name: hsqldb233
+    hsqldb_2.3.3:
+        container_name: hsqldb_2.3.3
         image: datagrip/hsqldb:2.3.3
         ports:
         - "9002:9001"
@@ -120,8 +107,8 @@ services:
         healthcheck:
           test: "exit 0"
 
-    derby1011:
-      container_name: derby1011
+    derby_10.11:
+      container_name: derby_10.11
       image: datagrip/derby-server:10.11
       ports:
         - "1527:1527"
@@ -129,8 +116,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    derby1012:
-      container_name: derby1012
+    derby_10.12:
+      container_name: derby_10.12
       image: datagrip/derby-server:10.12
       ports:
         - "1528:1527"
@@ -138,8 +125,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    h2:
-      container_name: h2
+    h2_1.3:
+      container_name: h2_1.3
       image: datagrip/h2:1.3
       ports:
         - "9092:9092"
@@ -148,8 +135,8 @@ services:
         test: "exit 0"
 
     # IBM Informix Innovator-C
-    informix:
-      container_name: informix
+    informix_12.10:
+      container_name: informix_12.10
       privileged: true
       image: ibmcom/informix-innovator-c:12.10.FC11IE
       ports:
@@ -160,8 +147,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    iris:
-      container_name: iris
+    iris_2019:
+      container_name: iris_2019
       image: datagrip/iris:2019
       ports:
         - "9092:52773"
@@ -174,9 +161,9 @@ services:
         timeout: 10s
         retries: 5
 
-    firebird3:
+    firebird_3:
       # jdbc:firebirdsql://localhost:3050/guest?encoding=UTF8
-      container_name: firebird3
+      container_name: firebird_3
       image: jacobalberty/firebird:3.0
       ports:
         - "3050:3050"
@@ -188,9 +175,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    firebird25sc:
+    firebird_2.5_sc:
       # jdbc:firebirdsql://localhost:3052//firebird/data/guest?encoding=UTF8
-      container_name: firebird25sc
+      container_name: firebird_2.5_sc
       image: jacobalberty/firebird:2.5-sc
       ports:
         - "3052:3050"
@@ -202,11 +189,11 @@ services:
         test: "exit 0"
 
 
-    saphana:
+    saphana_2:
       # user: SYSTEM
       # pwd: HXEHana1
       # jdbc:sap://localhost:39017/
-      container_name: saphana
+      container_name: saphana_2
       image: store/saplabs/hanaexpress:2.00.033.00.20180925.2
       ports:
         - "39017:39017"
