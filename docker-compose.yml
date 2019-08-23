@@ -2,9 +2,9 @@ version: '2.1'
 
 services:
 
-    pg82:
+    pg_8.2:
       # jdbc:postgresql://localhost:54312/guest?user=guest&amp;password=guest
-      container_name: pg82
+      container_name: pg_8.2
       ports:
         - "54312:5432"
       image: datagrip/postgres:8.2
@@ -12,9 +12,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg84:
+    pg_8.4:
       # jdbc:postgresql://localhost:54314/guest?user=guest&amp;password=guest
-      container_name: pg84
+      container_name: pg_8.4
       ports:
         - "54314:5432"
       image: postgres:8.4
@@ -22,9 +22,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg90:
+    pg_9.0:
       # jdbc:postgresql://localhost:54320/guest?user=guest&amp;password=guest
-      container_name: pg90
+      container_name: pg_9.0
       ports:
         - "54320:5432"
       image: postgres:9.0
@@ -32,9 +32,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg91:
+    pg_9.1:
       # jdbc:postgresql://localhost:54321/guest?user=guest&amp;password=guest
-      container_name: pg91
+      container_name: pg_9.1
       ports:
         - "54321:5432"
       image: postgres:9.1
@@ -42,9 +42,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg92:
+    pg_9.2:
       # jdbc:postgresql://localhost:54322/guest?user=guest&amp;password=guest
-      container_name: pg92
+      container_name: pg_9.2
       ports:
         - "54322:5432"
       image: postgres:9.2-alpine
@@ -52,9 +52,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg93:
+    pg_9.3:
       # jdbc:postgresql://localhost:54323/guest?user=guest&amp;password=guest
-      container_name: pg93
+      container_name: pg_9.3
       ports:
         - "54323:5432"
       image: postgres:9.3-alpine
@@ -62,9 +62,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg94:
+    pg_9.4:
       # jdbc:postgresql://localhost:54324/guest?user=guest&amp;password=guest
-      container_name: pg94
+      container_name: pg_9.4
       ports:
         - "54324:5432"
       image: postgres:9.4-alpine
@@ -72,19 +72,19 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg95:
+    pg_9.5:
       # jdbc:postgresql://localhost:54325/guest?user=guest&amp;password=guest
-      container_name: pg95
+      container_name: pg_9.5
       ports:
-        - "54325:5432"        
+        - "54325:5432"
       image: postgres:9.5-alpine
       env_file: .env
       healthcheck:
         test: "exit 0"
 
-    pg96:
+    pg_9.6:
       # jdbc:postgresql://localhost:54326/guest?user=guest&amp;password=guest
-      container_name: pg96
+      container_name: pg_9.6
       ports:
         - "54326:5432"
       image: postgres:9.6-alpine
@@ -92,9 +92,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg100:
+    pg_10.3:
       # jdbc:postgresql://localhost:54330/guest?user=guest&amp;password=guest
-      container_name: pg100
+      container_name: pg_10.3
       ports:
         - "54330:5432"
       image: postgres:10.3-alpine
@@ -102,9 +102,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg10X:
+    pg_10.X:
       # jdbc:postgresql://localhost:54331/guest?user=guest&amp;password=guest
-      container_name: pg10X
+      container_name: pg_10.X
       ports:
         - "54331:5432"
       image: postgres:10-alpine
@@ -112,9 +112,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg11X:
+    pg_11.X:
       # jdbc:postgresql://localhost:54332/guest?user=guest&amp;password=guest
-      container_name: pg11X
+      container_name: pg_11.X
       ports:
       - "54332:5432"
       image: postgres:11-alpine
@@ -122,9 +122,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    pg12X:
+    pg_12.X:
       # jdbc:postgresql://localhost:54333/guest?user=guest&amp;password=guest
-      container_name: pg12X
+      container_name: pg_12.X
       ports:
       - "54333:5432"
       image: postgres:12-alpine
@@ -156,9 +156,9 @@ services:
       healthcheck:
         test: grep -r -i --include \*.log "Database successfully started" || exit 1
 
-    mysql51:
+    mysql_5.1:
       # jdbc:mysql://localhost:33051/guest?user=guest&password=guest
-      container_name: mysql51
+      container_name: mysql_5.1
       ports:
         - "33051:3306"
       image: datagrip/mysql:5.1
@@ -166,9 +166,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql55:
+    mysql_5.5:
       # jdbc:mysql://localhost:33055/guest?user=guest&password=guest
-      container_name: mysql55
+      container_name: mysql_5.5
       privileged: true
       ports:
         - "33055:3306"
@@ -178,9 +178,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql56:
+    mysql_5.6:
       # jdbc:mysql://localhost:33056/guest?user=guest&password=guest
-      container_name: mysql56
+      container_name: mysql_5.6
       ports:
         - "33056:3306"
       image: mysql:5.6
@@ -189,9 +189,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql57:
+    mysql_5.7:
       # jdbc:mysql://localhost:33057/guest?user=guest&password=guest
-      container_name: mysql57
+      container_name: mysql_5.7
       ports:
         - "33057:3306"
       image: mysql:5.7
@@ -200,9 +200,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql803:
+    mysql_8.0.3:
       # jdbc:mysql://localhost:33080/guest?user=guest&password=guest
-      container_name: mysql803
+      container_name: mysql_8.0.3
       image: mysql:8.0.3
       ports:
         - "33080:3306"
@@ -211,10 +211,10 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mysql80X:
+    mysql_8.0.X:
       # jdbc:mysql://localhost:33081/guest?user=guest&password=guest
-      container_name: mysql80X
-      image: mysql:8
+      container_name: mysql_8.0.X
+      image: mysql:8.0
       ports:
         - "33081:3306"
       env_file: .env
@@ -222,9 +222,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria55:
+    maria_5.5:
       # jdbc:mariadb://localhost:33045/guest?user=guest&password=guest
-      container_name: maria55
+      container_name: maria_5.5
       image: mariadb:5.5
       ports:
         - "33045:3306"
@@ -233,9 +233,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria52:
+    maria_5.2:
       # jdbc:mariadb://localhost:33042/guest?user=guest&password=guest
-      container_name: maria52
+      container_name: maria_5.2
       image: datagrip/mariadb:5.2
       ports:
         - "33042:3306"
@@ -244,9 +244,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria53:
+    maria_5.3:
       # jdbc:mariadb://localhost:33043/guest?user=guest&password=guest
-      container_name: maria53
+      container_name: maria_5.3
       image: datagrip/mariadb:5.3
       ports:
         - "33043:3306"
@@ -255,9 +255,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria100:
+    maria_10.0:
       # jdbc:mariadb://localhost:33100/guest?user=guest&password=guest
-      container_name: maria100
+      container_name: maria_10.0
       image: mariadb:10.0
       ports:
         - "33100:3306"
@@ -266,9 +266,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria101:
+    maria_10.1:
       # jdbc:mariadb://localhost:33101/guest?user=guest&password=guest
-      container_name: maria101
+      container_name: maria_10.1
       image: mariadb:10.1
       ports:
         - "33101:3306"
@@ -277,9 +277,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria102:
+    maria_10.2:
       # jdbc:mariadb://localhost:33102/guest?user=guest&password=guest
-      container_name: maria102
+      container_name: maria_10.2
       image: mariadb:10.2
       ports:
         - "33102:3306"
@@ -288,9 +288,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria103:
+    maria_10.3:
       # jdbc:mariadb://localhost:33103/guest?user=guest&password=guest
-      container_name: maria103
+      container_name: maria_10.3
       image: mariadb:10.3
       ports:
         - "33103:3306"
@@ -299,9 +299,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    maria104:
+    maria_10.4:
       # jdbc:mariadb://localhost:33104/guest?user=guest&password=guest
-      container_name: maria104
+      container_name: maria_10.4
       image: mariadb:10.4
       ports:
         - "33104:3306"
@@ -312,9 +312,9 @@ services:
 
     # oracle VM options
     # -Duser.country=en -Duser.language=en
-    oracle11:
+    oracle_11.2:
       # jdbc:oracle:thin:guest/guest@localhost:1521:XE
-      container_name: oracle11
+      container_name: oracle_11.2
       ports:
         - "1521:1521"
       image: datagrip/oracle:11.2
@@ -324,8 +324,8 @@ services:
         test: "exit 0"
     
     # oracle 12.1.0.2 standart edition 2 (official)
-    oracle_12.1.0:
-      container_name: oracle121d
+    oracle_12.1:
+      container_name: oracle_12.1
       ports:
         - "15122:1521"
       image: datagrip/oracle:12.1.0.2-se2-directio
@@ -336,8 +336,8 @@ services:
         timeout: 30s
         retries: 10
 
-    oracle_12.2.0:
-      container_name: oracle122d
+    oracle_12.2:
+      container_name: oracle_12.2
       ports:
         - "15123:1521"
       image: datagrip/oracle:12.2.0.1-se2-directio
@@ -348,9 +348,9 @@ services:
         timeout: 30s
         retries: 10
 
-    db2:
+    db2_10.5:
       # jdbc:db2://localhost:50000/guest:user=guest;password=guest;
-      container_name: db2
+      container_name: db2_10.5
       privileged: true
       image: datagrip/db2
       ports:
@@ -376,9 +376,9 @@ services:
         retries: 5
 
     # needs about 30 seconds for proper start and initialization
-    sybase157:
+    sybase_15.7:
       # jdbc:jtds:sybase://localhost:5000/guest;user=guest;password=guest1234
-      container_name: sybase157      
+      container_name: sybase_15.7
       image: datagrip/sybase:15.7
       ports:
         - "5000:5000"
@@ -387,9 +387,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    sybase160:
+    sybase_16.0:
       # jdbc:jtds:sybase://localhost:5001/guest;user=guest;password=guest1234
-      container_name: sybase160
+      container_name: sybase_16.0
       privileged: true
       image: datagrip/sybase:16.0
       ports:
@@ -399,9 +399,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mssqllinux:
+    mssql_2017:
       # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
-      container_name: mssqllinux
+      container_name: mssql_2017
       privileged: true
       image: datagrip/mssql-server-linux:2017
       ports:
@@ -413,9 +413,9 @@ services:
         timeout: 10s
         retries: 5
 
-    mssqllinux19:
+    mssql_2019:
       # jdbc:sqlserver://localhost:1434;databaseName=testdb;user=tester;password=My@Super@Secret
-      container_name: mssqllinux19
+      container_name: mssql_2019
       privileged: true
       image: datagrip/mssql-server-linux:2019
       ports:
@@ -427,10 +427,10 @@ services:
         timeout: 10s
         retries: 5
 
-    vertica71:
+    vertica_7.1:
       # jdbc:vertica://localhost:5471/testdb?user=tester&password=testpwd
-      # schema: testschema      
-      container_name: vertica71
+      # schema: testschema
+      container_name: vertica_7.1
       image: datagrip/vertica:7.1.2
       ports:
         - "5471:5433"
@@ -441,10 +441,10 @@ services:
         timeout: 10s
         retries: 5
 
-    vertica72:
+    vertica_7.2:
       # jdbc:vertica://localhost:5433/testdb?user=tester&password=testpwd
-      # schema: testschema      
-      container_name: vertica72
+      # schema: testschema
+      container_name: vertica_7.2
       image: datagrip/vertica:7.2.3
       ports:
         - "5433:5433"
@@ -455,10 +455,10 @@ services:
         timeout: 10s
         retries: 5
 
-    vertica80:
+    vertica_8.0:
       # jdbc:vertica://localhost:5480/testdb?user=tester&password=testpwd
-      # schema: testschema      
-      container_name: vertica80
+      # schema: testschema
+      container_name: vertica_8.0
       image: datagrip/vertica:8.0.0
       ports:
         - "5480:5433"
@@ -469,10 +469,10 @@ services:
         timeout: 10s
         retries: 5
 
-    vertica81:
+    vertica_8.1:
       # jdbc:vertica://localhost:5481/testdb?user=tester&password=testpwd
       # schema: testschema
-      container_name: vertica81
+      container_name: vertica_8.1
       image: datagrip/vertica:8.1.1
       ports:
         - "5481:5433"
@@ -483,10 +483,10 @@ services:
         timeout: 10s
         retries: 5
 
-    vertica91:
+    vertica_9.1:
       # jdbc:vertica://localhost:5491/testdb?user=tester&password=testpwd
       # schema: testschema
-      container_name: vertica91
+      container_name: vertica_9.1
       image: datagrip/vertica:9.1.1
       ports:
         - "5491:5433"
@@ -497,9 +497,9 @@ services:
         timeout: 10s
         retries: 5
 
-    exasol:
+    exasol_6.0:
       # jdbc:exa:localhost:8899;schema=test;user=sys;password=exasol
-      container_name: exasol
+      container_name: exasol_6.0
       privileged: true
       image: datagrip/exasol:latest
       ports:
@@ -511,8 +511,8 @@ services:
         timeout: 10s
         retries: 5
 
-    mongo32:
-      container_name: mongo32
+    mongo_3.2:
+      container_name: mongo_3.2
       image: tutum/mongodb:3.2
       ports:
         - "27117:27017"
@@ -521,8 +521,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mongo34:
-      container_name: mongo34
+    mongo_3.4:
+      container_name: mongo_3.4
       image: datagrip/mongodb:3.4
       ports:
         - "27118:27017"
@@ -531,8 +531,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mongo40:
-      container_name: mongo40
+    mongo_4.0:
+      container_name: mongo_4.0
       image: datagrip/mongodb:4.0
       ports:
         - "27119:27017"
@@ -540,8 +540,8 @@ services:
       healthcheck:
         test: "exit 0"
 
-    mongo41:
-      container_name: mongo41
+    mongo_4.1:
+      container_name: mongo_4.1
       image: datagrip/mongodb:4.1
       ports:
         - "27017:27017"
@@ -549,9 +549,9 @@ services:
       healthcheck:
         test: "exit 0"
 
-    clickhouse:
+    clickhouse_18:
       # jdbc:clickhouse://localhost:8123/default
-      container_name: clickhouse
+      container_name: clickhouse_18
       image: datagrip/clickhouse:18
       ports:
       - "8123:8123"
@@ -565,9 +565,9 @@ services:
           soft: 262144
           hard: 262144
     
-    clickhouse19:
+    clickhouse_19:
       # jdbc:clickhouse://localhost:8124/default
-      container_name: clickhouse19
+      container_name: clickhouse_19
       image: datagrip/clickhouse:19
       ports:
       - "8124:8123"
@@ -581,9 +581,9 @@ services:
           soft: 262144
           hard: 262144
 
-    cassandra30:
+    cassandra_3.0:
       # db schema driver: jdbc:cassandra://localhost:9045/system
-      container_name: cassandra30
+      container_name: cassandra_3.0
       image: datagrip/cassandra:3.0
       ports:
         - "9045:9042"
@@ -593,9 +593,9 @@ services:
         timeout: 5s
         retries: 3    
 
-    cassandra3:
+    cassandra_3.11:
       # db schema driver: jdbc:cassandra://localhost:9042/system
-      container_name: cassandra3
+      container_name: cassandra_3.11
       image: datagrip/cassandra:3
       ports:
         - "9042:9042"
@@ -605,9 +605,9 @@ services:
         timeout: 5s
         retries: 3
 
-    cassandra21:
+    cassandra_2.1:
       # db schema driver: jdbc:cassandra://localhost:9043/system
-      container_name: cassandra21
+      container_name: cassandra_2.1
       image: datagrip/cassandra:2.1
       ports:
         - "9043:9042"
@@ -617,9 +617,9 @@ services:
         timeout: 5s
         retries: 1
 
-    cassandra22:
+    cassandra_2.2:
       # db schema driver: jdbc:cassandra://localhost:9044/system
-      container_name: cassandra22
+      container_name: cassandra_2.2
       image: datagrip/cassandra:2.2
       ports:
         - "9044:9042"
