@@ -212,6 +212,15 @@ services:
         timeout: 5s
         retries: 3
 
+    pg_postgis:
+      container_name: pg_postgis
+      image: datagrip/postgis
+      ports:
+        - "32222:5432"
+      env_file: .env
+      healthcheck:
+        test: "exit 0"
+
     #docker run -e DB_USER=test -e DB_PASSWORD=test -e DB_NAME=test -e REP_USER=rtest -e REP_PASSWORD=test -e ROLE=master --name pg-master -p 5432 -d hmarr/postgresql
     #docker run -e DB_USER=test -e DB_PASSWORD=test -e DB_NAME=test -e REP_USER=rtest -e REP_PASSWORD=test -e ROLE=slave -e MASTER_HOST=$MASTER_HOST -e MASTER_PORT=5432 --name pg-slave -p 5432 -d hmarr/postgresql
     pg_master:
