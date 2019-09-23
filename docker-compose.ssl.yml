@@ -1,0 +1,51 @@
+version: '2.1'
+
+services:
+  pg_9.3_ssl:
+    container_name: pg_9.3_ssl
+    build: ./ssl/pg/9.3/
+    ports:
+      - "54323:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
+  pg_9.5_ssl:
+    container_name: pg_9.5_ssl
+    build: ./ssl/pg/9.5/
+    ports:
+      - "54325:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
+  pg_9.6_ssl:
+    container_name: pg_9.6_ssl
+    build: ./ssl/pg/9.6/
+    ports:
+      - "54326:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
+  pg_10.x_ssl:
+    container_name: pg_10.X_ssl
+    build: ./ssl/pg/10.X/
+    ports:
+      - "54331:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
+  pg_11.x_ssl:
+    container_name: pg_11.X_ssl
+    build: ./ssl/pg/11.X/
+    ports:
+      - "54332:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
+  pg_12.x_ssl:
+    container_name: pg_12.X_ssl
+    build: ./ssl/pg/12.X/
+    ports:
+      - "54333:5432"
+    env_file: .env
+    healthcheck:
+      test: "exit 0"
