@@ -17,4 +17,7 @@ RUN chown postgres.postgres /usr/share/postgresql/9.5/pg_hba.conf.sample \
     chgrp postgres /var/ssl/server.key &&\
     chown postgres /var/ssl/server.key
 
-
+ENV LOCALE_CONFIG /etc/locale.gen
+RUN sed -ri 's/#\ fr_FR.UTF-8\ UTF-8/fr_FR.UTF-8\ UTF-8/' ${LOCALE_CONFIG}
+RUN sed -ri 's/#\ en_US.UTF-8\ UTF-8/en_US.UTF-8\ UTF-8/' ${LOCALE_CONFIG}
+RUN cd /usr/sbin/ && ./locale-gen
