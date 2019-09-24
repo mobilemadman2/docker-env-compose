@@ -223,7 +223,7 @@ services:
 
     cockroachdb_19.X:
       container_name: cockroachdb_19.X
-      image: cockroachdb/cockroach:latest
+      image: cockroachdb/cockroach:19.1.4
       hostname: roach1
       command: [start, --insecure]
       ports:
