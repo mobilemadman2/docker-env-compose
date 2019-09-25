@@ -58,7 +58,6 @@ services:
     command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
     healthcheck:
       test: "exit 0"
-
   mysql_8.0.x_ssl:
     container_name: mysql_8.0.x_ssl
     build: ./ssl/mysql/8.0.x/
@@ -66,5 +65,14 @@ services:
       - "33081:3306"
     env_file: .env
     command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci, --log-bin-trust-function-creators=true, --default_authentication_plugin=mysql_native_password]
+    healthcheck:
+      test: "exit 0"
+  maria_10.3_ssl:
+    container_name: maria_10.3_ssl
+    build: ./ssl/maria/10.3/
+    ports:
+      - "33103:3306"
+    env_file: .env
+    command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
     healthcheck:
       test: "exit 0"
