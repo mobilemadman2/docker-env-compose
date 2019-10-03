@@ -513,7 +513,7 @@ services:
 
     mongo_3.2:
       container_name: mongo_3.2
-      image: tutum/mongodb:3.2
+      image: datagrip/mongodb:3.2
       ports:
         - "27117:27017"
       env_file: .env
