@@ -76,3 +76,17 @@ services:
     command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
     healthcheck:
       test: "exit 0"
+  mssql_2017_ssl:
+      # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
+      container_name: mssql_2017_ssl
+      privileged: true
+      build: ./ssl/mssql/2017/
+      hostname: mssql_2017
+      ports:
+        - "1433:1433"
+      env_file: .env
+      healthcheck:
+        test: grep "Starting up database '${MSSQL_DB}'." /var/opt/mssql/log/errorlog || exit 1
+        interval: 3m
+        timeout: 10s
+        retries: 5
