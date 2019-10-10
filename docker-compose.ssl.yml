@@ -90,3 +90,18 @@ services:
         interval: 3m
         timeout: 10s
         retries: 5
+  cassandra_3.11_ssl:
+      # db schema driver: jdbc:cassandra://localhost:9042/system
+      #jdbc:cassandra://localhost:9142/?sslenabled=true
+      container_name: cassandra_3.11_ssl
+      # image: datagrip/cassandra:3
+      build: ./ssl/cassandra/
+      hostname: cassandra_3.11
+      ports:
+        - "9042:9042"
+        - "9142:9142"
+      healthcheck:
+        test: grep -r '\{name=guest' /var/log/cassandra/system.log || exit 1
+        interval: 2m
+        timeout: 5s
+        retries: 3
