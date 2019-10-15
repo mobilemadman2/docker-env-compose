@@ -69,7 +69,19 @@ cd /opt/mssql-tools/bin/
 ./sqlcmd -S localhost -U sa -P $SA_PASSWORD -t 30 -i"/opt/mssql/init.sql" -o"/opt/mssql/initout.log"
 
 echo =============== INIT DATA CREATED ==========================
-echo =============== MSSQL SERVER SUCCESSFULLY STARTED ==========================
+echo =============== MSSQL RESTARTING ==========================
+
+pkill sqlsrvr
+cd /opt/mssql/bin/
+./sqlservr
+export STATUS=0
+i=0
+while [[ $STATUS -eq 0 ]] || [[ $i -lt 90 ]]; do
+	sleep 1
+	i=$((i+1))
+	STATUS=$(grep 'SQL Server is now ready for client connections' /var/opt/mssql/log/errorlog | wc -l)
+done
+echo =============== MSSQL SERVER SUCCESSFULLY RESTARTED ==========================
 
 #trap
 while [ "$END" == '' ]; do
