@@ -55,6 +55,9 @@ GO
 
 EOSQL
 
+chown mssql:mssql /etc/ssl/certs/mssql.pem /etc/ssl/private/mssql.key
+chmod 600 /etc/ssl/certs/mssql.pem /etc/ssl/private/mssql.key
+
 cat /var/opt/mssql/mssql.conf
 /opt/mssql/bin/mssql-conf set network.tlscert /etc/ssl/certs/mssql.pem
 /opt/mssql/bin/mssql-conf set network.tlskey /etc/ssl/private/mssql.key
