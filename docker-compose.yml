@@ -582,7 +582,7 @@ services:
     cassandra_3.0:
       # db schema driver: jdbc:cassandra://localhost:9045/system
       container_name: cassandra_3.0
-      image: datagrip/cassandra:3.0
+      image: registry.jetbrains.team/datagrip/cassandra:3.0
       ports:
         - "9045:9042"
       healthcheck:
@@ -594,7 +594,7 @@ services:
     cassandra_3.11:
       # db schema driver: jdbc:cassandra://localhost:9042/system
       container_name: cassandra_3.11
-      image: datagrip/cassandra:3
+      image: registry.jetbrains.team/datagrip/cassandra:3
       ports:
         - "9042:9042"
       healthcheck:
@@ -606,7 +606,7 @@ services:
     cassandra_2.1:
       # db schema driver: jdbc:cassandra://localhost:9043/system
       container_name: cassandra_2.1
-      image: datagrip/cassandra:2.1
+      image: egistry.jetbrains.team/datagrip/cassandra:2.1
       ports:
         - "9043:9042"
       healthcheck:
@@ -618,7 +618,7 @@ services:
     cassandra_2.2:
       # db schema driver: jdbc:cassandra://localhost:9044/system
       container_name: cassandra_2.2
-      image: datagrip/cassandra:2.2
+      image: registry.jetbrains.team/datagrip/cassandra:2.2
       ports:
         - "9044:9042"
       healthcheck:
