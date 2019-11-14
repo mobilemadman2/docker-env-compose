@@ -156,6 +156,19 @@ services:
       healthcheck:
         test: grep -r -i --include \*.log "Database successfully started" || exit 1
 
+    greenplum_6.1:
+      # jdbc:postgresql://localhost:54304/testdb?user=tester&password=pivotal
+      container_name: greenplum_6.1
+      ports:
+        - "54304:5432"
+      image: datagrip/greenplum:6.1
+      privileged: true
+      hostname: greenplum_6.1.0
+      security_opt:
+       - seccomp:unconfined
+      healthcheck:
+        test: grep -r -i --include \*.log "Database successfully started" || exit 1
+
     mysql_5.1:
       # jdbc:mysql://localhost:33051/guest?user=guest&password=guest
       container_name: mysql_5.1
