@@ -618,7 +618,7 @@ services:
 
     cassandra_3.11_jb:
       # db schema driver: jdbc:cassandra://localhost:9042/system
-      container_name: cassandra_3.11
+      container_name: cassandra_3.11_jb
       image: registry.jetbrains.team/datagrip/cassandra:3
       ports:
         - "9042:9042"
