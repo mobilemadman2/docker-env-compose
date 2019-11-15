@@ -416,7 +416,8 @@ services:
       # jdbc:sqlserver://localhost:1433;databaseName=testdb;user=tester;password=My@Super@Secret
       container_name: mssql_2017
       privileged: true
-      image: datagrip/mssql-server-linux:2017
+      # image: datagrip/mssql-server-linux:2017
+      image: registry.jetbrains.team/datagrip/mssql-server-linux:2017
       ports:
         - "1433:1433"
       env_file: .env
