@@ -341,7 +341,7 @@ services:
       container_name: oracle_12.1
       ports:
         - "15122:1521"
-      image: datagrip/oracle:12.1.0.2-se2-directio
+      image: registry.jetbrains.team/datagrip/oracle:12.1.0.2-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
@@ -353,7 +353,7 @@ services:
       container_name: oracle_12.2
       ports:
         - "15123:1521"
-      image: datagrip/oracle:12.2.0.1-se2-directio
+      image: registry.jetbrains.team/datagrip/oracle:12.2.0.1-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
