@@ -341,7 +341,7 @@ services:
       container_name: oracle_12.1
       ports:
         - "15122:1521"
-      image: registry.jetbrains.team/datagrip/oracle:12.1.0.2-se2-directio
+      image: datagrip/oracle:12.1.0.2-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
@@ -353,7 +353,7 @@ services:
       container_name: oracle_12.2
       ports:
         - "15123:1521"
-      image: registry.jetbrains.team/datagrip/oracle:12.2.0.1-se2-directio
+      image: datagrip/oracle:12.2.0.1-se2-directio
       env_file: .env
       healthcheck:
         test: grep "Database creation complete" /opt/oracle/cfgtoollogs/dbca/XE/XE.log || exit 1
@@ -417,7 +417,7 @@ services:
       container_name: mssql_2017
       privileged: true
       # image: datagrip/mssql-server-linux:2017
-      image: registry.jetbrains.team/datagrip/mssql-server-linux:2017
+      image: datagrip/mssql-server-linux:2017
       ports:
         - "1433:1433"
       env_file: .env
@@ -609,18 +609,6 @@ services:
       # db schema driver: jdbc:cassandra://localhost:9042/system
       container_name: cassandra_3.11
       image: datagrip/cassandra:3
-      ports:
-        - "9042:9042"
-      healthcheck:
-        test: grep -r '\{name=guest' /var/log/cassandra/system.log || exit 1
-        interval: 2m
-        timeout: 5s
-        retries: 3
-
-    cassandra_3.11_jb:
-      # db schema driver: jdbc:cassandra://localhost:9042/system
-      container_name: cassandra_3.11_jb
-      image: registry.jetbrains.team/datagrip/cassandra:3
       ports:
         - "9042:9042"
       healthcheck:
